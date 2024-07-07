@@ -29,18 +29,18 @@ header {
     text-align: right;
 }
 
-#menu {
+.header-icon {
     margin: 1rem;
     cursor: pointer;
     color: #424242;
     transition: transform 0.3s;
 }
 
-#menu:hover {
+.header-icon:hover {
     transform: scale(1.1);
 }
 
-#menu:active {
+.header-icon:active {
     transform: scale(0.9);
 }
 

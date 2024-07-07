@@ -12,6 +12,10 @@
 </head>
 <body>
     <header>
-        <i id="menu" class="fa fa-search fa-2x"></i>
+        <% if (currentPage === "search") { %>
+            <i id="home-icon" class="fa fa-home fa-2x header-icon"></i>
+        <% } else { %>
+            <i id="search-icon" class="fa fa-search fa-2x header-icon"></i>
+        <% } %>
     </header>
     <main>
