@@ -15,13 +15,20 @@ body, html {
 }
 
 body {
-    background-image: url("/images/background-table.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     display: flex;
     flex-direction: column;
+}
+
+body.home {
+    background-image: url("/images/background-table.jpg");
+}
+
+body.search {
+    background-image: url("/images/background-table.jpg");
 }
 
 header {

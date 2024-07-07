@@ -10,12 +10,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles/main.css">
 </head>
-<body>
+<body class="<%= currentPage ? `${currentPage}` : `` %>">
     <header>
-        <% if (currentPage === "search") { %>
-            <i id="home-icon" class="fa fa-home fa-2x header-icon"></i>
-        <% } else { %>
-            <i id="search-icon" class="fa fa-search fa-2x header-icon"></i>
+        <% if (locals.currentPage) { %>
+            <% if (currentPage === "search") { %>
+                <i id="home-icon" class="fa fa-home fa-2x header-icon"></i>
+            <% } else { %>
+                <i id="search-icon" class="fa fa-search fa-2x header-icon"></i>
+            <% } %>
         <% } %>
     </header>
     <main>
