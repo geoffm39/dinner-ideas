@@ -1,20 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dinner Ideas</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles/main.css">
-</head>
-<body id="welcome">
-    <h1>What's for Dinner?</h1>
-    <h2>Find <span>tasty</span> recipes and <span>save money</span> using what you have in the fridge.</h2>
-    <button id="explore-button">Explore Now</button>
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="/js/main.js"></script>
-</body>
-</html>
+<%- include("partials/header.ejs") %>
+
+    <div id="welcome" class="content">
+        <h1>What's for Dinner?</h1>
+        <h2>Find <span>tasty</span> recipes and <span>save money</span> using what you have in the fridge.</h2>
+        <button id="explore-button">Explore Now</button>        
+    </div>
+
+<%- include("partials/footer.ejs") %>

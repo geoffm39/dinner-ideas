@@ -8,11 +8,11 @@ app.use(express.static("public"));
 app.use(express.urlencoded({extended: true}));
 
 app.get("/", (req, res) => {
-    res.render("index.ejs");
+    res.render("index.ejs", { currentPage: "home" });
 });
 
 app.get("/search", (req, res) => {
-    res.render("search.ejs");
+    res.render("search.ejs", { currentPage: "search" });
 });
 
 app.listen(port, () => {

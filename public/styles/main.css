@@ -14,17 +14,55 @@ body, html {
     padding: 0;
 }
 
-#welcome {
+body {
     background-image: url("/images/background-table.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     display: flex;
+    flex-direction: column;
+}
+
+header {
+    height: 5%;
+    text-align: right;
+}
+
+#menu {
+    margin: 1rem;
+    cursor: pointer;
+    color: #424242;
+    transition: transform 0.3s;
+}
+
+#menu:hover {
+    transform: scale(1.1);
+}
+
+#menu:active {
+    transform: scale(0.9);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-grow: 1;
+}
+
+footer {
+    text-align: center;
+    height: 5%;
+}
+
+#welcome {
+    display: flex;
     flex-direction: column;
-    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 #welcome h1 {
