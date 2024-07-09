@@ -1,12 +1,15 @@
 import express from "express";
 import axios from "axios";
+import dotenv from 'dotenv';
+
+dotenv.config()
 
 const app = express();
 const port = 3000;
 
 const API_URL = "https://api.spoonacular.com/recipes/complexSearch";
 const apiConfig = {
-    headers: { "x-api-key": "b2777332a7e74c5aa746668bb76ed41e"}
+    headers: { "x-api-key": process.env.API_KEY}
 };
 
 const cuisines = ["Any", "African", "Asian", "American", "British", "Cajun", "Caribbean", "Chinese", "European", 
