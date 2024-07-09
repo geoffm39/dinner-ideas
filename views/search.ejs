@@ -1,8 +1,25 @@
 <%- include("partials/header.ejs", { currentPage: currentPage }) %>
 
 <div id="search" class="content">
-    <h1>Search</h1>
-    <button>Search</button>        
+    <form action="/results" method="GET">
+        <div class="form-field">
+            <label for="query">Search</label>
+            <input type="text" name="query" id="query">            
+        </div>
+        <div class="form-field">
+            <label for="cuisine">Cuisine</label>
+            <select name="cuisine" id="cuisine">
+                <% cuisines.forEach(cuisine => { %>
+                    <option value="<%= cuisine %>"><%= cuisine %></option>
+                <% }); %>
+            </select>            
+        </div>
+        <div class="form-field">
+            <label for="includeIngredients">My ingredients (separated by commas)</label>
+            <input type="text" name="includeIngredients" id="includeIngredients">            
+        </div>
+        <button type="submit">Search Recipes</button>
+    </form>       
 </div>
 
 <%- include("partials/footer.ejs") %>

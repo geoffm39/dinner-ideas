@@ -31,6 +31,10 @@ body.search {
     background-image: url("/images/background-table.jpg");
 }
 
+body.results {
+    background-image: url("/images/background-board.jpg");
+}
+
 header {
     height: 5%;
     text-align: right;
@@ -87,6 +91,51 @@ footer {
     font-weight: 700;
     font-style: italic;
     color: #004225;
+}
+
+#search {
+    width: 30%;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.form-field {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 0.5rem;
+}
+
+.form-field * {
+    font-size: 19px;
+}
+
+.form-field label {
+    font-weight: 600;
+    color: #424242;
+}
+
+.form-field input, .form-field select {
+    border-radius: 5px;
+    border: #424242 solid 1px;
+    padding: 0.5rem;
+}
+
+.form-field label {
+    margin-bottom: 0.15rem;
+}
+
+.form-field *:focus {
+    outline: none;
+    box-shadow: 0 0 3px 2px rgba(0, 66, 37, 0.4);
 }
 
 #explore-button {
