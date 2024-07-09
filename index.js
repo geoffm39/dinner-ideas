@@ -30,9 +30,18 @@ app.get("/search", (req, res) => {
 
 app.get("/results", async (req, res) => {
     try {
-        apiConfig.params = req.query;
-        const result = await axios.get(API_URL, apiConfig);
-        res.render("results.ejs", { currentPage: "results", results: JSON.stringify(result.data)});
+        const updatedApiConfig = Object.assign({}, apiConfig,
+            {
+                params: Object.assign(
+                    {}, 
+                    req.query,
+                    { sort: "max-used-ingredients"}
+                )
+            }
+        )
+        const result = await axios.get(API_URL, updatedApiConfig);
+        console.log(result.data.results)
+        res.render("results.ejs", { currentPage: "results", results: result.data.results});
     } catch (error) {
         res.render("results.ejs", { currentPage: "results", results: JSON.stringify(error.response.data)});
     }
