@@ -4,6 +4,11 @@ import axios from "axios";
 const app = express();
 const port = 3000;
 
+const API_URL = "https://api.spoonacular.com/recipes/complexSearch";
+const apiConfig = {
+    headers: { "x-api-key": "b2777332a7e74c5aa746668bb76ed41e"}
+};
+
 const cuisines = ["Any", "African", "Asian", "American", "British", "Cajun", "Caribbean", "Chinese", "European", 
     "Eastern European", "French", "German", "Greek", "Indian", "Irish", "Italian", "Japanese", "Jewish", 
     "Korean", "Latin American", "Mediterranean", "Mexican", "Middle Eastern", "Nordic", "Southern", 
@@ -20,9 +25,14 @@ app.get("/search", (req, res) => {
     res.render("search.ejs", { currentPage: "search", cuisines: cuisines });
 });
 
-app.get("/results", (req, res) => {
-    const { query: { query, cuisine, includeIngredients }} = req;
-    res.render("results.ejs", { currentPage: "results"});
+app.get("/results", async (req, res) => {
+    try {
+        apiConfig.params = req.query;
+        const result = await axios.get(API_URL, apiConfig);
+        res.render("results.ejs", { currentPage: "results", results: JSON.stringify(result.data)});
+    } catch (error) {
+        res.render("results.ejs", { currentPage: "results", results: JSON.stringify(error.response.data)});
+    }
 });
 
 app.listen(port, () => {
