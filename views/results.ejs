@@ -1,6 +1,6 @@
 <%- include("partials/header.ejs", { currentPage: currentPage }) %>
 
-<div class="content">
+<div id="results" class="content">
     <% results.forEach(result => { %>
         <div class="recipe-card">
             <img src="<%= result.image %>" alt="dish image">

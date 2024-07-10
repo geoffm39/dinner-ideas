@@ -167,3 +167,17 @@ button:focus {
 button:active {
     transform: scale(0.95);
 }
+
+#results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.recipe-card {
+    width: 10%;
+    height: auto;
+    flex: 1 1 calc(20% - 4rem);
+    padding: 1rem;
+    margin: 1rem;
+}
