@@ -7,7 +7,7 @@ dotenv.config()
 const app = express();
 const port = 3000;
 
-const API_URL = "https://api.spoonacular.com/recipes/complexSearch";
+const API_URL = "https://api.spoonacular.com/recipes";
 const apiConfig = {
     headers: { "x-api-key": process.env.API_KEY}
 };
@@ -39,11 +39,30 @@ app.get("/results", async (req, res) => {
                 )
             }
         )
-        const result = await axios.get(API_URL, updatedApiConfig);
-        console.log(result.data.results)
+        const result = await axios.get(`${API_URL}/complexSearch`, updatedApiConfig);
+        console.log(result.data.results);
         res.render("results.ejs", { currentPage: "results", results: result.data.results});
     } catch (error) {
         res.render("results.ejs", { currentPage: "results", results: JSON.stringify(error.response.data)});
+    }
+});
+
+app.get("/recipe/:recipeId", async (req, res) => {
+    try {
+        const [ingredientsResponse, instructionsResponse] = await Promise.all([
+            axios.get(`${API_URL}/${req.params.recipeId}/ingredientWidget.json`, apiConfig),
+            axios.get(`${API_URL}/${req.params.recipeId}/analyzedInstructions`, apiConfig)
+        ]);
+        console.log(req.params.recipeId);
+        console.log(ingredientsResponse.data);
+        console.log(instructionsResponse.data);
+        res.render("recipe.ejs", { 
+            currentPage: "recipe", 
+            ingredients: ingredientsResponse.data, 
+            instructions: instructionsResponse.data 
+        });
+    } catch (error) {
+        res.render("recipe.ejs", { currentPage: "recipe", error: JSON.stringify(error.response.data)});
     }
 });
 
