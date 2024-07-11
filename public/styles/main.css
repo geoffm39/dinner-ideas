@@ -12,6 +12,7 @@ body, html {
     font-style: normal;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -185,5 +186,11 @@ button:active {
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease;
 }
 
+.recipe-card:hover {
+    transform: scale(1.05);
+}
