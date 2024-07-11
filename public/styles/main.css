@@ -32,7 +32,7 @@ body.search {
 }
 
 body.results {
-    background-image: url("/images/background-board.jpg");
+    background-image: url("/images/background-table.jpg");
 }
 
 header {
@@ -177,7 +177,13 @@ button:active {
 .recipe-card {
     width: 10%;
     height: auto;
-    flex: 1 1 calc(20% - 4rem);
+    flex: 1 1 calc(50% - 8rem - 2px);
     padding: 1rem;
-    margin: 1rem;
+    margin: 3rem;
+    background-color: white;
+    border: #424242 solid 1px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
 }
+
