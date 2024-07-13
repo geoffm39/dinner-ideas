@@ -2,7 +2,7 @@
 
 <div id="results" class="content">
     <% results.forEach(result => { %>
-        <a class="recipe-card" href="/recipe/<%= result.id %>">
+        <a class="recipe-card" href="/recipe/<%= result.id %>?title=<%= result.title %>">
             <h2><%= result.title %></h2>
             <img src="<%= result.image %>" alt="dish image">            
         </a>

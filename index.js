@@ -40,7 +40,6 @@ app.get("/results", async (req, res) => {
             }
         )
         const result = await axios.get(`${API_URL}/complexSearch`, updatedApiConfig);
-        console.log(result.data.results);
         res.render("results.ejs", { currentPage: "results", results: result.data.results});
     } catch (error) {
         res.render("results.ejs", { currentPage: "results", results: JSON.stringify(error.response.data)});
@@ -53,13 +52,12 @@ app.get("/recipe/:recipeId", async (req, res) => {
             axios.get(`${API_URL}/${req.params.recipeId}/ingredientWidget.json`, apiConfig),
             axios.get(`${API_URL}/${req.params.recipeId}/analyzedInstructions`, apiConfig)
         ]);
-        console.log(req.params.recipeId);
-        console.log(ingredientsResponse.data);
         console.log(instructionsResponse.data);
         res.render("recipe.ejs", { 
             currentPage: "recipe", 
-            ingredients: ingredientsResponse.data, 
-            instructions: instructionsResponse.data 
+            ingredients: ingredientsResponse.data.ingredients, 
+            instructions: instructionsResponse.data,
+            title: req.query.title 
         });
     } catch (error) {
         res.render("recipe.ejs", { currentPage: "recipe", error: JSON.stringify(error.response.data)});
