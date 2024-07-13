@@ -33,7 +33,11 @@ body.search {
 }
 
 body.results {
-    background-image: url("/images/background-table.jpg");
+    background-image: url("/images/black-wood-board.jpg");
+}
+
+body.recipe {
+    background-image: url("/images/black-black-board.jpg");
 }
 
 header {
@@ -193,4 +197,13 @@ button:active {
 
 .recipe-card:hover {
     transform: scale(1.05);
+}
+
+#recipe {
+    display: flex;
+    flex-direction: column;
+}
+
+#recipe * {
+    color: #F5F5DC;
 }

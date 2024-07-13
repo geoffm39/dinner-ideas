@@ -1,22 +1,28 @@
-<h1><%= title %></h1>
-<h2>Ingredients</h2>
-<ul>
-    <% ingredients.forEach(ingredient => { %>
-        <li>
-            <%= ingredient.amount.metric.value %> <%= ingredient.amount.metric.unit %> <%= ingredient.name %>
-        </li>
-    <% }); %>    
-</ul>
-<h2>Method</h2>
-<ul>
-    <% instructions.forEach(component => { %>
-        <h3><%= component.name %></h3>
-        <ol>
-            <% component.steps.forEach(step => { %>
-                <li>
-                    <%= step.step %>     
-                </li>
-            <% }); %>                
-        </ol>
-    <% }); %>
-</ul>
+<%- include("partials/header.ejs", { currentPage: currentPage }) %>
+
+<div id="recipe" class="content">
+    <h1><%= title %></h1>
+    <h2>Ingredients</h2>
+    <ul>
+        <% ingredients.forEach(ingredient => { %>
+            <li>
+                <%= ingredient.amount.metric.value %> <%= ingredient.amount.metric.unit %> <%= ingredient.name %>
+            </li>
+        <% }); %>    
+    </ul>
+    <h2>Method</h2>
+    <ul>
+        <% instructions.forEach(component => { %>
+            <h3><%= component.name %></h3>
+            <ol>
+                <% component.steps.forEach(step => { %>
+                    <li>
+                        <%= step.step %>     
+                    </li>
+                <% }); %>                
+            </ol>
+        <% }); %>
+    </ul>    
+</div>
+
+<%- include("partials/footer.ejs") %>

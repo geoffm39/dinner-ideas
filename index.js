@@ -52,7 +52,6 @@ app.get("/recipe/:recipeId", async (req, res) => {
             axios.get(`${API_URL}/${req.params.recipeId}/ingredientWidget.json`, apiConfig),
             axios.get(`${API_URL}/${req.params.recipeId}/analyzedInstructions`, apiConfig)
         ]);
-        console.log(instructionsResponse.data);
         res.render("recipe.ejs", { 
             currentPage: "recipe", 
             ingredients: ingredientsResponse.data.ingredients, 
