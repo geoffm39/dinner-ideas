@@ -213,3 +213,7 @@ button:active {
     font-size: 30px;
     font-weight: 600;
 }
+
+#recipe .error {
+    color: #F5F5DC;
+}
