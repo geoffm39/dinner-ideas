@@ -1,12 +1,16 @@
 <%- include("partials/header.ejs", { currentPage: currentPage }) %>
 
 <div id="results" class="content">
-    <% results.forEach(result => { %>
-        <a class="recipe-card" href="/recipe/<%= result.id %>?title=<%= result.title %>">
-            <h2><%= result.title %></h2>
-            <img src="<%= result.image %>" alt="dish image">            
-        </a>
-    <% }); %>   
+    <% if (locals.result) { %>
+        <% results.forEach(result => { %>
+            <a class="recipe-card" href="/recipe/<%= result.id %>?title=<%= result.title %>">
+                <h2><%= result.title %></h2>
+                <img src="<%= result.image %>" alt="dish image">            
+            </a>
+        <% }); %>  
+    <% } else { %>
+        <h2 class="error"><%= error %></h2>
+    <% } %>     
 </div>
 
 <%- include("partials/footer.ejs") %>

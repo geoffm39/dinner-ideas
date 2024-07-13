@@ -42,7 +42,8 @@ app.get("/results", async (req, res) => {
         const result = await axios.get(`${API_URL}/complexSearch`, updatedApiConfig);
         res.render("results.ejs", { currentPage: "results", results: result.data.results});
     } catch (error) {
-        res.render("results.ejs", { currentPage: "results", results: JSON.stringify(error.response.data)});
+        console.log(error.response.data);
+        res.render("results.ejs", { currentPage: "results", error: `${error.response.status} Error: Please try again later`});
     }
 });
 
@@ -59,7 +60,8 @@ app.get("/recipe/:recipeId", async (req, res) => {
             title: req.query.title 
         });
     } catch (error) {
-        res.render("recipe.ejs", { currentPage: "recipe", error: JSON.stringify(error.response.data)});
+        console.log(error.response.data);
+        res.render("recipe.ejs", { currentPage: "recipe", error: `${error.response.status} Error: Please try again later`});
     }
 });
 

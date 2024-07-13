@@ -208,3 +208,8 @@ button:active {
 #recipe * {
     color: #F5F5DC;
 }
+
+.error {
+    font-size: 30px;
+    font-weight: 600;
+}
