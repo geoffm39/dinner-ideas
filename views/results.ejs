@@ -1,7 +1,7 @@
 <%- include("partials/header.ejs", { currentPage: currentPage }) %>
 
 <div id="results" class="content">
-    <% if (locals.result) { %>
+    <% if (locals.results) { %>
         <% results.forEach(result => { %>
             <a class="recipe-card" href="/recipe/<%= result.id %>?title=<%= result.title %>">
                 <h2><%= result.title %></h2>
@@ -9,7 +9,9 @@
             </a>
         <% }); %>  
     <% } else { %>
-        <h2 class="error"><%= error %></h2>
+        <% if (locals.error) { %>
+            <h2 class="error"><%= error %></h2>
+        <% } %>
     <% } %>     
 </div>
 

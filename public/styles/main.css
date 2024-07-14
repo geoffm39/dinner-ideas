@@ -79,6 +79,7 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
+    width: 90%;
 }
 
 #welcome h1 {
@@ -217,3 +218,51 @@ button:active {
 #recipe .error {
     color: #F5F5DC;
 }
+
+#recipe h1 {
+    margin-bottom: 1rem;
+    font-size: 60px;
+    color: #FFB000;
+}
+
+#recipe h2 {
+    color: #FFCF9D;
+    margin-bottom: 0.3rem;
+    font-size: 30px;
+}
+
+#recipe h3 {
+    position: relative;
+    left: 1rem;
+    margin-bottom: 0.2rem;
+    font-size: 25px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#recipe li {
+    position: relative;
+    left: 1.5rem;
+    margin-bottom: 0.2rem;
+    font-size: 20px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@media (max-width: 1025px) {
+    #search {
+        width: 60%;
+    }
+}
+
+@media (max-width: 426px) {
+    #recipe {
+     width: 80%;
+    } 
+ 
+    #search {
+     width: 80%;
+    }
+ }
