@@ -186,7 +186,7 @@ button:active {
     flex: 1 1 calc(50% - 8rem - 2px);
     padding: 1rem;
     margin: 3rem;
-    background-color: white;
+    background-color: whitesmoke;
     border: #424242 solid 1px;
     border-radius: 5px;
     display: flex;
